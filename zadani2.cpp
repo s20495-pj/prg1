@@ -1,46 +1,58 @@
-
 #include <iostream>
-//Michał Wadas
-//Badysiak Paweł
 using namespace std;
-void printPattern(int);
 int main()
+// Badysiak Paweł
+// Wadas Michał
 {
-	int a=0;
+cout<<"Podaj ilość wierszy diamentu:  ";
 
-	printPattern(a);
+    int size;
+  cin>>size;
+
+    int z=1;
+  for ( int i=0; i<=size; i++)
+  {
+    for (int j=size; j>i; j--)
+    {
+      cout<<" ";
+   }
+
+    cout<<"*";  
+
+    if ( i>0)
+    {
+      for ( int k=1; k<=z; k++)
+      {
+        cout<<" ";
+      }
+      z+=2;
+      cout<<"*";
+    }
+    cout<<endl; 
+  }
+
+  z-=4;
+
+  for (int i=0; i<=size-1; i++)
+  {
+    for (int j=0; j<=i; j++)
+    {
+      cout<<" ";
+    }
+
+    cout<<"*";
+
+    for (int k=1; k<=z; k++)
+    {
+      cout<<" ";
+    }
+    z-=2;
+
+    if (i!=size-1)
+    {
+      cout<<"*";
+    }
+    cout<<endl;
+  }
+return 0;
 }
-void printPattern(int a) {
-	int i, j, space, k = 0;
-	for (i = 1; i <= a; i++) {
-
-		for (j = 1; j <= a - i; j++) {
-			cout << " ";
-		}
-		while (k != (2 * i - 1)) {
-			if (k == 0 or k == 2 * i - 2)
-				cout << "#";
-			else
-				cout << " ";
-			k++;
-		}
-		k = 0;
-		cout << endl;
-	}
-	n--;
-	for (i = n; i >= 1; i--) {
-		for (j = 0; j <= n - i; j++) {
-			cout << " ";
-		}
-		k = 0;
-		while (k != (2 * i - 1)) {
-			if (k == 0 or k == 2 * i - 2)
-				cout << "#";
-			else
-				cout << " ";
-			k++;
-		}
-		cout << endl;
-	}
-}
-
